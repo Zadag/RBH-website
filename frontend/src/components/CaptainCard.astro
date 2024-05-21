@@ -1,0 +1,25 @@
+---
+interface Props {
+  name: string,
+}
+
+const {name} = Astro.props
+---
+
+<div class="capt">
+  <h1>{name}</h1>
+  <div class="teammates">
+
+  </div>
+</div>
+<style>
+  .capt {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+  }
+  .teammates {
+    display: flex;
+    flex-wrap: wrap;
+  }
+</style>
