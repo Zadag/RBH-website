@@ -17,6 +17,16 @@ In order to run this program you will need Node.js
 
 - #### Other Operating Systems
   You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
+
+- #### Install packages
+
+  Once you have node and npm installed run the following command to install dependencies
+
+      $ npm i
+
+  Run the following to launch the frontend.  Navigate to the provided URL to view the site.
+
+      $ npm run dev
   
 ## 🚀 Project Structure
 
