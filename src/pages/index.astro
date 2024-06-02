@@ -7,20 +7,32 @@ import CaptainCard from '../components/CaptainCard.astro';
 ---
 
 <Layout title="Welcome to RBH">
+	<!-- <div id="bg-video-container">
+		<video autoplay muted loop id="bg-video">
+			<source src="fountain-dive copy.webm" type="video/webm">
+		</video>
+	</div> -->
 	<main>
-		  <h1><span class="text-gradient">RBH Tournament Draft</span></h1>
+		<!-- <div id="disc-invite"> -->
+		  <h1><span class="text-gradient"><a href="https://www.discord.gg/intotherabbithole">RBH Tournament Draft</a></span></h1>
+	  <!-- </div> -->
 
+		<!-- <img id="RBHlogo" src={RBHImage.src} alt="RBH"/> -->
 		<section id="captain-sect">
-			<CaptainCard name='Sasha' url='/captains/captain-1'></CaptainCard>
-			<CaptainCard name='LostZero' url='/captains/captain-2'></CaptainCard>
-			<CaptainCard name='ChillSavior' url='/captains/captain-3'></CaptainCard>
-			<CaptainCard name='HumanFaith' url='/captains/captain-4'></CaptainCard>
-			<CaptainCard name='Frischy' url='/captains/captain-5'></CaptainCard>
-			<CaptainCard name='SComm' url='/captains/captain-6'></CaptainCard>
-			<CaptainCard name="All players" url='/captains/all'></CaptainCard>
+			<CaptainCard name='Shilling'></CaptainCard>
+			<CaptainCard name='Drone'></CaptainCard>
+			<CaptainCard name='Sasha'></CaptainCard>
+			<CaptainCard name='Styled'></CaptainCard>
 		</section>
 		<section id="player-sect">
-
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
+			<Card player='Carl#NA2' role='mid' rank='Emerald 4' />
 		</section>
 	</main>
 </Layout>

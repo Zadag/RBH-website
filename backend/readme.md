@@ -1,0 +1,1 @@
+This backend will be written in Python utilitizing Django and Django-Rest-Framework.  

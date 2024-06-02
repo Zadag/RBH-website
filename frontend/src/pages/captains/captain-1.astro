@@ -1,13 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
 import Image from 'astro:assets';
 import RBHImage from '../assets/RBH-testlogo-raw copy.jpeg';
-import CaptainCard from '../components/CaptainCard.astro';
+import CaptainCard from '../../components/CaptainCard.astro';
+import { globalState } from '../../stores/globalStore';
+
+const storedPlayers = typeof localStorage !== 'undefined' ? localStorage.getItem('players') : null;
+if (storedPlayers) {
+  globalState.set(JSON.parse(storedPlayers));
+} else {
+
+}
+
+const players = globalState.get();
 ---
 
 <Layout title="Welcome to RBH">
 	<main>
+
 		  <h1><span class="text-gradient">RBH Tournament Draft</span></h1>
 
 		<section id="captain-sect">
@@ -20,11 +31,26 @@ import CaptainCard from '../components/CaptainCard.astro';
 			<CaptainCard name="All players" url='/captains/all'></CaptainCard>
 		</section>
 		<section id="player-sect">
+			{players.map((player) => (
+        player["Team"] === "Sasha" && (
+        <Card player={player['Riot-ID']} role={player['Main-Role']} rank={player['S14S1-Rank']} champs={player['Top-Champs']} wins={player['W']} losses={player['L']} team={player['Team']} opgg={player['OPGG']} elo={player['Elo']} />
+      )))
 
+      }
 		</section>
 	</main>
 </Layout>
+<script is:inline>
+  import { globalState } from '../../stores/globalStore';
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const storedPlayers = JSON.parse(localStorage.getItem('players') || '[]');
+
+    if (storedPlayers.length > 0) {
+      globalState.set(storedPlayers);
+    }
+  });
+</script>
 <style>
 	main {
 		margin: auto;
