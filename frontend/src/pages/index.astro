@@ -1,26 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Image from 'astro:assets';
-import RBHImage from '../assets/RBH-testlogo-raw copy.jpeg';
 import CaptainCard from '../components/CaptainCard.astro';
+import Image from 'astro:assets';
+import RBHLogo from '../assets/RBH-Logo-Transparent.png';
 ---
 
 <Layout title="Welcome to RBH">
 	<main>
-		  <h1><span class="text-gradient">RBH Tournament Draft</span></h1>
-
-		<section id="captain-sect">
-			<CaptainCard name='Sasha' url='/captains/captain-1'></CaptainCard>
-			<CaptainCard name='LostZero' url='/captains/captain-2'></CaptainCard>
-			<CaptainCard name='ChillSavior' url='/captains/captain-3'></CaptainCard>
-			<CaptainCard name='HumanFaith' url='/captains/captain-4'></CaptainCard>
-			<CaptainCard name='Frischy' url='/captains/captain-5'></CaptainCard>
-			<CaptainCard name='SComm' url='/captains/captain-6'></CaptainCard>
-			<CaptainCard name="All players" url='/captains/all'></CaptainCard>
-		</section>
-		<section id="player-sect">
-
+		<header>
+			<a href="/"><img id="logo" src={RBHLogo.src} /></a>
+		  <h1><span class="text-gradient">RBH Inhouses</span></h1>
+		</header>
+		<section id="pages">
+			<div class="page-box">
+				<a href="/tournaments"><p>Tournaments</p></a>
+			</div>
 		</section>
 	</main>
 </Layout>
@@ -44,18 +38,12 @@ import CaptainCard from '../components/CaptainCard.astro';
 		height: auto;
 		z-index: -1;
 	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-	}
 	.text-gradient {
-		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
+		text-shadow: 0 0 0px red, 0 0 3px white;
 	}
 	.instructions {
 		margin-bottom: 2rem;
@@ -120,5 +108,36 @@ import CaptainCard from '../components/CaptainCard.astro';
 	#player-sect {
 		display: flex;
 		flex-wrap: wrap;
+	}
+	#logo {
+		width: 9rem;
+		position: relative;
+		filter: brightness(4);
+		cursor: pointer;
+		left: -1rem;
+	}
+	header {
+		display: flex;
+		width: 100vw;
+  }
+	header > h1 {
+		position: relative;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin: auto;
+	}
+	#pages {
+		margin-top: 6rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.page-box {
+		border: solid;
+		text-align: center;
+		font-size: 3rem;
+		padding: 1rem;
 	}
 </style>

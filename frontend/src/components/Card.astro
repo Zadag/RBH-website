@@ -1,17 +1,18 @@
 ---
 import RBHImage from '../assets/RBH-Logo.png';
-import TopImg from '../assets/7990-lol-role-top.png'; 
-import MidImg from '../assets/6934-lol-role-mid.png';
+import TopImg from '../assets/Top_glowing.png'; 
+import MidImg from '../assets/Mid_glowing.png';
 import FillImg from '../assets/2724-lol-role-fill.png';
-import BotImg from '../assets/9366-lol-role-bot.png';
-import SuppImg from '../assets/7990-lol-role-support.png';
-import JGImg from '../assets/1152-lol-role-jungle.png';
+import BotImg from '../assets/adc_glowing.png';
+import SuppImg from '../assets/Support_glowing.png';
+import JGImg from '../assets/Jungle_glowing.png';
 import goldImg from '../assets/gold.png';
 import platinumImg from '../assets/platinum.png';
 import diamondImg from '../assets/diamond.png';
 import masterImg from '../assets/master.png';
 import grandmasterImg from '../assets/grandmaster.png';
 import challengerImg from '../assets/challenger.png';
+import emeraldImg from '../assets/emerald.webp';
 
 import { globalState } from '../stores/globalStore';
 
@@ -87,9 +88,10 @@ if (rank.includes('Challenger')) rankImg = challengerImg;
 				<img class="rank-img" src={rankImg.src} />
 			</div>
 		</div>
-		<a href=`${opgg}` target="_blank">
+		<h3 class="disc">discord.gg/intotherabbithole</h3>
+		<!-- <a href=`${opgg}` target="_blank">
 			OPGG
-		</a>
+		</a> -->
 </li>
 <style>
 	.link-card {
@@ -99,13 +101,13 @@ if (rank.includes('Challenger')) rankImg = challengerImg;
 		align-items: center;
 		padding: 1px;
 		margin: 1rem;
-		min-width: 69rem;
-		min-height: 40rem;
+		min-width: 1200px;
+		min-height: 675px;
 		background-color: #000000;
 		background-image: none;
 		background-size: 400%;
 		border: solid;
-		border-color: red;
+		border-color: rgb(254, 91, 91);
 		border-radius: 7px;
 		border-width: 10px;
 		background-position: 100%;
@@ -114,13 +116,13 @@ if (rank.includes('Challenger')) rankImg = challengerImg;
 		background-repeat: no-repeat;
 		background-position: center;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		box-shadow: inset 0 0 5px 1px rgb(214, 174, 255), 1px 1px 5px 1px rgb(214, 174, 255);
 	}
 	h2 {
 		margin: 0;
 		font-size: 4rem;
 		color: rgb(210, 81, 81);
-		text-shadow: 1px 1px 20px rgb(158, 2, 2);
+		text-shadow: 1px 1px 12px rgb(196, 94, 94);
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {
@@ -135,21 +137,21 @@ if (rank.includes('Challenger')) rankImg = challengerImg;
 		/* color: rgb(var(--accent-light)); */
 	}
 	.champ-img {
-		height: 75%;
+		height: 70%;
 		margin: 0.5rem;
 	}
 	.champs {
-		height: 22rem;
+		height: 27rem;
 	}
 	.role {
 		position: relative;
 		bottom: 11rem;
-		left: 30rem;
+		left: 37rem;
 	}
 	.rank-img {
 		position: relative;
 		bottom: 20rem;
-		left: 22rem;
+		left: 29rem;
 	}
   a {
 		position: relative;
@@ -159,5 +161,16 @@ if (rank.includes('Challenger')) rankImg = challengerImg;
 		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 		font-size: 4rem;
 
+	}
+  .disc {
+		position: relative;
+		left: 20rem;
+		bottom: 2rem;
+		font-size: 2rem;
+		color: rgb(210, 81, 81);
+		text-shadow: 1px 1px 12px rgb(196, 94, 94);
+		padding: 0px;
+		margin: 0px;
+		font-weight: 500;
 	}
 </style>
