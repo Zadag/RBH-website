@@ -1,17 +1,17 @@
 ---
 interface Props {
   name: string,
+  url: string,
 }
 
-const {name} = Astro.props
+const {name, url} = Astro.props
 ---
 
-<div class="capt">
-  <h1>{name}</h1>
-  <div class="teammates">
-
+<a href={url}>
+  <div class="capt">
+    <h1>{name}</h1>
   </div>
-</div>
+</a>
 <style>
   .capt {
     display: flex;
@@ -21,5 +21,10 @@ const {name} = Astro.props
   .teammates {
     display: flex;
     flex-wrap: wrap;
+  }
+  a {
+    background-color: black;
+    border: solid;
+    border-color: brown;
   }
 </style>
